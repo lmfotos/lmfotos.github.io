@@ -31,6 +31,7 @@
 <!-- <body class="bg-image bg-image-light"> -->
 
 <body class="bg-image">
+    <!-- SVG icons -->
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="check2" viewBox="0 0 16 16">
             <path
@@ -251,6 +252,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function () {
+        var header = $(body);
+
+        const backgrounds = new Array(
+            'url(/static/media/backgrounds/1.jpg)',
+            'url(/static/media/backgrounds/2.jpg)',
+            'url(/static/media/backgrounds/3.jpg)',
+            );
+
+            var current = 0;
+
+            function nextBackground() {
+                current++;
+                current = current % backgrounds.length;
+                header.css('background-image', backgrounds[current]);
+            }
+            setInterval(nextBackground, 1000);
+
+            header.css('background-image', backgrounds[0]);
+        });
+    </script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 .bg-image {
-    background-image: url("/static/media/background_1.jpg");
+    background-image: url('/static/media/backgrounds/1.jpg');
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,6 +17,6 @@
 }
 
 .bg-image-barb {
-    background-image: url("/static/media/barb.jpg");
+    background-image: url('/static/media/barb.jpg');
     background-size: cover;
 }
