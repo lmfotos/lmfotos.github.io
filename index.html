@@ -210,11 +210,13 @@
                         event.preventDefault()
                         event.stopPropagation()
                     }
-
-                    form.classList.add('was-validated')
-                    window.location.href = "mailto:luismoreirafotografia@gmail.com?subject=" +
+                    else {
+                        window.location.href = "mailto:luismoreirafotografia@gmail.com?subject=" +
                         encodeURIComponent(document.getElementById('from-subject').value) +
                         "&body=" + encodeURIComponent(document.getElementById('message-text').value);
+                    }
+
+                    form.classList.add('was-validated')
                 }, false)
             })
         })()
