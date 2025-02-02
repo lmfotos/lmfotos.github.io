@@ -3,6 +3,10 @@
     fill: currentColor;
 }
 
+.bi-static {
+    vertical-align: -.125em;
+}
+
 .bd-mode-toggle {
     z-index: 1500;
 }
