@@ -209,11 +209,17 @@
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
-                    }
-                    else {
+                    } else {
+                        event.preventDefault(); // Prevent default form submission
+
+                        // Send email
                         window.location.href = "mailto:luismoreirafotografia@gmail.com?subject=" +
-                        encodeURIComponent(document.getElementById('from-subject').value) +
-                        "&body=" + encodeURIComponent(document.getElementById('message-text').value);
+                            encodeURIComponent(document.getElementById('from-subject').value) +
+                            "&body=" + encodeURIComponent(document.getElementById('message-text').value);
+
+                        // Dismiss the modal
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+                        modal.hide();
                     }
 
                     form.classList.add('was-validated')
