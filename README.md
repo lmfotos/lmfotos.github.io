@@ -6,6 +6,7 @@ This is the official website for Luís Moreira Fotografia, showcasing profession
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Features](#features)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -36,6 +37,19 @@ To start the development server, run:
 ```sh
 npm start
 ```
+
+To build the project, run:
+
+```sh
+npm run build
+```
+
+## Features
+
+- Professional photography portfolio
+- Responsive design
+- Contact form
+- Gallery with categories
 
 ## Contributing
 
