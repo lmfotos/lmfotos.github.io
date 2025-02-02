@@ -20,7 +20,7 @@
     }
 
     const setTheme = theme => {
-        const bgImage = document.body.classList[1]
+        const bgImage = document.body.classList[1];
         if (theme === 'auto') {
             const prefersColorScheme = (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
             document.documentElement.setAttribute('data-bs-theme', prefersColorScheme)
