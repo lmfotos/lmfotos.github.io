@@ -12,14 +12,19 @@ This is the official website for Luís Moreira Fotografia, showcasing profession
 ## Installation
 
 1. Clone the repository:
+
     ```sh
     git clone https://github.com/yourusername/lm-website.git
     ```
+
 2. Navigate to the project directory:
+
     ```sh
     cd lm-website
     ```
+
 3. Install the dependencies:
+
     ```sh
     npm install
     ```
@@ -27,6 +32,7 @@ This is the official website for Luís Moreira Fotografia, showcasing profession
 ## Usage
 
 To start the development server, run:
+
 ```sh
 npm start
 ```
