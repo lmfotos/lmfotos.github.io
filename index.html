@@ -256,8 +256,6 @@
     <!-- Custom JS -->
     <script>
         window.addEventListener("load", (event) => {
-            var bgImage = document.body.style.backgroundImage;
-
             const backgrounds = new Array(
                 'url("/static/media/backgrounds/1.jpg")',
                 'url("/static/media/backgrounds/2.jpg")',
@@ -269,12 +267,12 @@
             function nextBackground() {
                 current++;
                 current = current % backgrounds.length;
-                bgImage = backgrounds[current];
+                document.body.style.backgroundImage = backgrounds[current];
                 console.log(backgrounds[current])
             }
             setInterval(nextBackground, 1000);
 
-            bgImage = backgrounds[0];
+            document.body.style.backgroundImage = backgrounds[0];
         });
     </script>
 </body>
