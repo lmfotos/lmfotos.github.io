@@ -20,16 +20,11 @@
     }
 
     const setTheme = theme => {
-        /*const bgImage = document.body.classList*/
-        if (theme === 'auto') {
+                if (theme === 'auto') {
             const prefersColorScheme = (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
             document.documentElement.setAttribute('data-bs-theme', prefersColorScheme)
-            /*bgImage.classList.remove(bgImage)
-            bgImage.classList.add(`bg-image bg-image-"${prefersColorScheme}`)*/
         } else {
             document.documentElement.setAttribute('data-bs-theme', theme)
-            /*bgImage.classList.remove(bgImage)
-            bgImage.classList.add(`bg-image bg-image-"${theme}`)*/
         }
         
     }
