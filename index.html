@@ -71,20 +71,22 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form class="needs-validation" novalidate>
                         <div class="mb-3">
                             <label for="from-subject" class="col-form-label">Assunto:</label>
-                            <input type="text" class="form-control" id="from-subejct" required>
+                            <input type="text" class="form-control" id="from-subject" required>
+                            <div class="invalid-feedback">Por favor, insira um assunto.</div>
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">Mensagem:</label>
                             <textarea class="form-control" id="message-text" required></textarea>
+                            <div class="invalid-feedback">Por favor, insira a mensagem.</div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-secondary" onclick="sendEmail()">Enviar Mensagem</button>
+                    <button type="submit" class="btn btn-secondary">Enviar Mensagem</button>
                 </div>
             </div>
         </div>
@@ -194,13 +196,27 @@
 
     <!-- Custom JS -->
     <script>
-        function sendEmail() {
-            let sub = document.getElementById('from-subejct').value;
-            let link = 
-                "mailto:luismoreirafotografia@gmail.com?subject=" + encodeURIComponent(sub) +
-                "&body=" + encodeURIComponent(document.getElementById('message-text').value);
-            window.location.href = link;
-        }
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                    window.location.href = "mailto:luismoreirafotografia@gmail.com?subject=" +
+                        encodeURIComponent(document.getElementById('from-subject').value) +
+                        "&body=" + encodeURIComponent(document.getElementById('message-text').value);
+                }, false)
+            })
+        })()
     </script>
 </body>
 
