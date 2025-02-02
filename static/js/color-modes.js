@@ -24,7 +24,6 @@
         if (theme === 'auto') {
             const prefersColorScheme = (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
             document.documentElement.setAttribute('data-bs-theme', prefersColorScheme)
-            if (bgImage.className == "bg-image-light")
             bgImage.classList.remove(bgImage)
             bgImage.classList.add(`bg-image-"${prefersColorScheme}`)
         } else {
