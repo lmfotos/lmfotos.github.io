@@ -259,9 +259,9 @@
             var bgImage = document.body.style.backgroundImage;
 
             const backgrounds = new Array(
-                'url(/static/media/backgrounds/1.jpg)',
-                'url(/static/media/backgrounds/2.jpg)',
-                'url(/static/media/backgrounds/3.jpg)',
+                'url("/static/media/backgrounds/1.jpg")',
+                'url("/static/media/backgrounds/2.jpg")',
+                'url("/static/media/backgrounds/3.jpg")',
             );
 
             var current = 0;
@@ -270,6 +270,7 @@
                 current++;
                 current = current % backgrounds.length;
                 bgImage = backgrounds[current];
+                console.log(backgrounds[current])
             }
             setInterval(nextBackground, 1000);
 
