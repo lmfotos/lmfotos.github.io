@@ -73,18 +73,18 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="from-name" class="col-form-label">De:</label>
-                            <input type="text" class="form-control" id="from-name">
+                            <label for="from-subject" class="col-form-label">Assunto:</label>
+                            <input type="text" class="form-control" id="from-subejct" required>
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">Mensagem:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <textarea class="form-control" id="message-text" required></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-secondary">Enviar Mensagem</button>
+                    <button type="button" class="btn btn-secondary" onclick="sendEmail()">Enviar Mensagem</button>
                 </div>
             </div>
         </div>
@@ -191,6 +191,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script>
+        function sendEmail() {
+            let sub = document.getElementById('from-subejct').value;
+            let link = 
+                "mailto:luismoreirafotografia@gmail.com?subject=" + encodeURIComponent(sub) +
+                "&body=" + encodeURIComponent(document.getElementById('message-text').value);
+            window.location.href = link;
+        }
+    </script>
 </body>
 
 </html>
