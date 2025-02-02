@@ -5,6 +5,7 @@
 
 .bi-static {
     vertical-align: -.125em;
+    fill: white;
 }
 
 .bd-mode-toggle {
