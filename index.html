@@ -255,13 +255,14 @@
 
     <!-- Custom JS -->
     <script>
-        $(document).ready(function () {
-        var header = $(body);
+        window.addEventListener("load", (event) => {
+            log.textContent += "load\n";
+            var header = document.body;
 
-        const backgrounds = new Array(
-            'url(/static/media/backgrounds/1.jpg)',
-            'url(/static/media/backgrounds/2.jpg)',
-            'url(/static/media/backgrounds/3.jpg)',
+            const backgrounds = new Array(
+                'url(/static/media/backgrounds/1.jpg)',
+                'url(/static/media/backgrounds/2.jpg)',
+                'url(/static/media/backgrounds/3.jpg)',
             );
 
             var current = 0;
