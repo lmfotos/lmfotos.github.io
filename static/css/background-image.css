@@ -18,4 +18,5 @@
 
 .bg-image-barb {
     background-image: url("/static/media/barb.jpg");
+    background-size: cover;
 }
