@@ -1,4 +1,4 @@
 .bg-image {
-    background-image: url(static/media/backgournd.jpg);
+    background-image: url("/static/media/backgournd.jpg");
     height: 100vh;
 }
