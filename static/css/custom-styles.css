@@ -17,10 +17,10 @@ textarea {
 .grid-item {
     width: 160px;
     height: 120px;
-    float: center;
+    float: left;
     border: 2px solid #333;
     border-color: hsla(0, 0%, 0%, 0.5);
-    background-size: cover;
+    /*background-size: cover;*/
     /*border-radius: 5px;*/
 }
 
