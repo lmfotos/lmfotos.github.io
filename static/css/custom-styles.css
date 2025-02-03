@@ -14,3 +14,7 @@ textarea {
   padding: 10px;
   border-radius: 5px;
 }
+
+.figure-caption {
+  color: black;
+}
