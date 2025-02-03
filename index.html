@@ -226,6 +226,16 @@
                     form.classList.add('was-validated')
                 }, false)
             })
+
+            // Clear form fields when modal is dismissed
+            const contactModal = document.getElementById('contactModal');
+            contactModal.addEventListener('hidden.bs.modal', () => {
+                document.getElementById('from-subject').value = '';
+                document.getElementById('message-text').value = '';
+                Array.from(forms).forEach(form => {
+                    form.classList.remove('was-validated');
+                });
+            });
         })()
     </script>
 </body>
