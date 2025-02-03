@@ -13,6 +13,8 @@ grid.addEventListener('click', function (event) {
   if (!matchesSelector(event.target, '.grid-item')) {
     return;
   }
+
+  console.log('click', event.target);
   // change size of item via class
   event.target.classList.toggle('grid-item--gigante');
   // trigger layout

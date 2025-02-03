@@ -20,6 +20,7 @@ textarea {
     float: center;
     border: 2px solid #333;
     border-color: hsla(0, 0%, 0%, 0.5);
+    background-size: cover;
     /*border-radius: 5px;*/
 }
 
