@@ -6,6 +6,7 @@ var msnry = new Masonry(grid, {
   itemSelector: '.grid-item',
   columnWidth: 160,
   stagger: 30,
+  gutter: 10,
 });
 
 grid.addEventListener('click', function (event) {
