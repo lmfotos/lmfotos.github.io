@@ -187,13 +187,13 @@
             <h2 class="pb-2 border-bottom text-black">Portfólio</h2>
             <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x400" class="img-fluid" alt="Placeholder">
+                    <img src="/static/media/portfolio/1.jpg" class="img-fluid" alt="Placeholder">
                 </div>
                 <div class="grid-item grid-item--width2">
-                    <img src="https://via.placeholder.com/400x400" class="img-fluid" alt="Placeholder">
+                    <img src="/static/media/portfolio/2.jpg" class="img-fluid" alt="Placeholder">
                 </div>
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x400" class="img-fluid" alt="Placeholder">
+                    <img src="/static/media/portfolio/3.jpg" class="img-fluid" alt="Placeholder">
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4 mb-4">
@@ -296,7 +296,7 @@
                 </div>
             </div>
         </div>
-
+    
         <!-- Footer -->
         <footer class="footer mt-auto py-3 bg-body-tertiary">
             <div class="container">
@@ -305,25 +305,25 @@
             </div>
         </footer>
     </main>
-
+    
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
+    
     <!-- Masonry JS -->
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
         integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
         async></script>
-
+    
     <!-- Custom JS -->
     <script>
         (() => {
             'use strict'
-
+    
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             const forms = document.querySelectorAll('.needs-validation')
-
+    
             // Loop over them and prevent submission
             Array.from(forms).forEach(form => {
                 form.addEventListener('submit', event => {
@@ -332,21 +332,21 @@
                         event.stopPropagation()
                     } else {
                         event.preventDefault(); // Prevent default form submission
-
+    
                         // Send email
                         window.location.href = "mailto:luismoreirafotografia@gmail.com?subject=" +
                             encodeURIComponent(document.getElementById('from-subject').value) +
                             "&body=" + encodeURIComponent(document.getElementById('message-text').value);
-
+    
                         // Dismiss the modal
                         const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
                         modal.hide();
                     }
-
+    
                     form.classList.add('was-validated')
                 }, false)
             })
-
+    
             // Clear form fields when modal is dismissed
             const contactModal = document.getElementById('contactModal');
             contactModal.addEventListener('hidden.bs.modal', () => {
@@ -356,7 +356,7 @@
                     form.classList.remove('was-validated');
                 });
             });
-
+    
             // Close navbar after click
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
             const navbarCollapse = document.querySelector('.navbar-collapse');
@@ -369,6 +369,6 @@
             });
         })()
     </script>
-</body>
-
-</html>
+    </body>
+    
+    </html>
