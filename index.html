@@ -142,42 +142,47 @@
     </header>
 
     <!-- Main Container -->
-    <main class="bg-image h-100">
-        <div class="container mt-5">
-            <div class="row g-4 p-5 mb-3 row-cols-1 row-cols-lg-2 bg-dark text-light rounded-3 bg-opacity-75">
-                <div class="feature col">
-                    <h1>Luís Moreira</h1>
-                    <h2>Fotografia</h2>
-                    <p>Serviços de Fotografia Profissional</p>
-                    <a class="btn btn-secondary mb-4" aria-label="WhatsApp" href="https://wa.me/351915408861"
-                        target="_blank" rel="noopener">
-                        <svg class="bi bi-whatsapp" width="16" height="16" fill="currentColor">
-                            <use xlink:href="#whatsapp"></use>
-                        </svg>
-                        WhatsApp
-                    </a>
-                </div>
-                <div id="About" class="feature col">
-                    <div
-                        class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                        <img src="/static/media/lmf-logo.png" class="img-fluid" alt="LMF Logo">
+    <main>
+        <div class="container w-100 bg-image">
+            <div class="container mt-5">
+                <div class="row g-4 p-5 mb-3 row-cols-1 row-cols-lg-2 bg-dark text-light rounded-3 bg-opacity-75">
+                    <div class="feature col">
+                        <h1>Luís Moreira</h1>
+                        <h2>Fotografia</h2>
+                        <p>Serviços de Fotografia Profissional</p>
+                        <a class="btn btn-secondary mb-4" aria-label="WhatsApp" href="https://wa.me/351915408861"
+                            target="_blank" rel="noopener">
+                            <svg class="bi bi-whatsapp" width="16" height="16" fill="currentColor">
+                                <use xlink:href="#whatsapp"></use>
+                            </svg>
+                            WhatsApp
+                        </a>
                     </div>
-                    <h3 class="fs-2 text-body-emphasis">Sobre Mim</h3>
-                    <p>
-                        Luís Moreira, um apaixonado pela fotografia, residente em em Vila do Conde, dedico a minha vida
-                        a transformar momentos em memórias inesquecíveis.
-                    </p>
-                    <p>
-                        A minha paixão pela fotografia começou muito cedo e, desde então, tenho explorado diversas
-                        técnicas e estilos, na busca de aprimorar o meu olhar e a minha capacidade de contar histórias
-                        através das imagens.
-                    </p>
-                    <p>
-                        Sou fotógrafo, de retrato, produto, paisagens, eventos corporativos, batizados e comunhões e
-                        cada
-                        área proporciona-me oportunidades únicas de expressar minha criatividade, num estilo moderno e
-                        artístico.
-                    </p>
+                    <div id="About" class="feature col">
+                        <div
+                            class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                            <img src="/static/media/lmf-logo.png" class="img-fluid" alt="LMF Logo">
+                        </div>
+                        <h3 class="fs-2 text-body-emphasis">Sobre Mim</h3>
+                        <p>
+                            Luís Moreira, um apaixonado pela fotografia, residente em em Vila do Conde, dedico a minha
+                            vida
+                            a transformar momentos em memórias inesquecíveis.
+                        </p>
+                        <p>
+                            A minha paixão pela fotografia começou muito cedo e, desde então, tenho explorado diversas
+                            técnicas e estilos, na busca de aprimorar o meu olhar e a minha capacidade de contar
+                            histórias
+                            através das imagens.
+                        </p>
+                        <p>
+                            Sou fotógrafo, de retrato, produto, paisagens, eventos corporativos, batizados e comunhões e
+                            cada
+                            área proporciona-me oportunidades únicas de expressar minha criatividade, num estilo moderno
+                            e
+                            artístico.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -296,7 +301,7 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- Footer -->
         <footer class="footer mt-auto py-3 bg-body-tertiary">
             <div class="container">
@@ -305,25 +310,25 @@
             </div>
         </footer>
     </main>
-    
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    
+
     <!-- Masonry JS -->
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
         integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
         async></script>
-    
+
     <!-- Custom JS -->
     <script>
         (() => {
             'use strict'
-    
+
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             const forms = document.querySelectorAll('.needs-validation')
-    
+
             // Loop over them and prevent submission
             Array.from(forms).forEach(form => {
                 form.addEventListener('submit', event => {
@@ -332,21 +337,21 @@
                         event.stopPropagation()
                     } else {
                         event.preventDefault(); // Prevent default form submission
-    
+
                         // Send email
                         window.location.href = "mailto:luismoreirafotografia@gmail.com?subject=" +
                             encodeURIComponent(document.getElementById('from-subject').value) +
                             "&body=" + encodeURIComponent(document.getElementById('message-text').value);
-    
+
                         // Dismiss the modal
                         const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
                         modal.hide();
                     }
-    
+
                     form.classList.add('was-validated')
                 }, false)
             })
-    
+
             // Clear form fields when modal is dismissed
             const contactModal = document.getElementById('contactModal');
             contactModal.addEventListener('hidden.bs.modal', () => {
@@ -356,7 +361,7 @@
                     form.classList.remove('was-validated');
                 });
             });
-    
+
             // Close navbar after click
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
             const navbarCollapse = document.querySelector('.navbar-collapse');
@@ -369,6 +374,6 @@
             });
         })()
     </script>
-    </body>
-    
-    </html>
+</body>
+
+</html>
