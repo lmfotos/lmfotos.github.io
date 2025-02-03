@@ -366,31 +366,14 @@
     <!-- Masonry JS -->
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
         integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
-        async>
-            var grid = document.querySelector('.grid');
-
-            var msnry = new Masonry(grid, {
-                itemSelector: '.grid-item',
-                columnWidth: 160,
-                stagger: 30,
-                gutter: 10,
-            });
-
-            grid.addEventListener('click', function (event) {
-                console.log('click', event.target);
-
-                // don't proceed if item was not clicked on
-                if (!matchesSelector(event.target, '.grid-item')) {
-                    return;
-                }
-
-                // change size of item via class
-                event.target.classList.toggle('grid-item--gigante');
-
-                // trigger layout
-                msnry.layout();
-            });
-        </script>
+        async> document.addEventListener("DOMContentLoaded", function () {
+    var msnry = new Masonry(".grid", {
+      itemSelector: ".grid-item",
+      columnWidth: ".grid-item",
+      percentPosition: true,
+    });
+  });
+</script>
 
     <!-- Custom JS -->
     <!-- <script src="/static/js/color-modes.js"></script> -->
