@@ -108,7 +108,7 @@
                         height="24">
                         <use xlink:href="#instagram"></use>
                     </svg></a>
-                <a class="text-body-secondary mx-2" href="https://www.facebook.com/luismfotografias" rel="noopener"
+                <a class="text-body-secondary mx-4" href="https://www.facebook.com/luismfotografias" rel="noopener"
                     title="Facebook" target="_blank"><svg class="bi-static bi-facebook" width="24" height="24">
                         <use xlink:href="#facebook"></use>
                     </svg></a>
@@ -234,6 +234,17 @@
                 document.getElementById('message-text').value = '';
                 Array.from(forms).forEach(form => {
                     form.classList.remove('was-validated');
+                });
+            });
+
+            // Close navbar after click
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbarCollapse.classList.contains('show')) {
+                        bootstrap.Collapse.getInstance(navbarCollapse).hide();
+                    }
                 });
             });
         })()
