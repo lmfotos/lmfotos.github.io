@@ -253,7 +253,7 @@
 
         <!-- Portfolio -->
         <div class="container" id="portfolio">
-            <a class="h2 pb-2 border-bottom" href="#portfolio" rel="noopener">Portfólio</a>
+            <h2 class="pb-2 border-bottom">Portfólio</h2>
             <div class="grid">
                 <figure class="figure grid-item">
                     <img data-src="/static/media/portfolio/1.jpg" class="lazy figure-img img-fluid rounded"
@@ -462,7 +462,7 @@
             });
 
             // Close navbar after click
-            const navLinks = document.querySelectorAll('.navbar-nav .nav-link .navbar-brand');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
             const navbarCollapse = document.querySelector('.navbar-collapse');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
