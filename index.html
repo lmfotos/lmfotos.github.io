@@ -306,8 +306,8 @@
                     <figcaption class="figure-caption">Fotografia em Madrid</figcaption>
                 </figure>
                 <figure class="figure grid-item grid-item--height3">
-                    <img data-src="/static/media/portfolio/tio_pepe_madrid.jpg" class="lazy figure-img img-fluid rounded"
-                        alt="Fotografia em Madrid">
+                    <img data-src="/static/media/portfolio/tio_pepe_madrid.jpg"
+                        class="lazy figure-img img-fluid rounded" alt="Fotografia em Madrid">
                     <figcaption class="figure-caption">Fotografia em Madrid</figcaption>
                 </figure>
                 <figure class="figure grid-item">
@@ -321,8 +321,8 @@
                     <figcaption class="figure-caption">Fotografia artística <i>street art</i> no Porto</figcaption>
                 </figure>
                 <figure class="figure grid-item">
-                    <img data-src="/static/media/portfolio/povoavarzim_barb.jpg" class="lazy figure-img img-fluid rounded"
-                        alt="Artística na Póvoa de Varzim">
+                    <img data-src="/static/media/portfolio/povoavarzim_barb.jpg"
+                        class="lazy figure-img img-fluid rounded" alt="Artística na Póvoa de Varzim">
                     <figcaption class="figure-caption">Artística na Póvoa de Varzim</figcaption>
                 </figure>
                 <figure class="figure grid-item grid-item--width2 grid-item--height2">
@@ -383,20 +383,29 @@
         crossorigin="anonymous"></script>
 
     <!-- Masonry JS -->
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
-        async> document.addEventListener("DOMContentLoaded", function () {
-                var msnry = new Masonry(".grid", {
-                    itemSelector: ".grid-item",
-                    columnWidth: ".grid-item",
-                    percentPosition: true,
-                });
+    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous">
+            var grid = document.querySelector('.grid');
+            var msnry = new Masonry(grid, {
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-item',
+                percentPosition: true,
+                stagger: 30,
+            });
+
+            grid.addEventListener('click', function (event) {
+                // don't proceed if item was not clicked on
+                if (!matchesSelector(event.target, '.grid-item')) {
+                    return;
+                }
+                // change size of item via class
+                event.target.classList.toggle('grid-item--gigante');
+                // trigger layout
+                msnry.layout();
             });
         </script>
 
     <!-- Custom JS -->
-    <!-- <script src="/static/js/color-modes.js"></script> -->
-    <!-- <script src="/static/js/masonry.pkgd.js"></script> -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const images = document.querySelectorAll("img.lazy");
