@@ -438,40 +438,41 @@
                 observer.observe(img);
                 img.addEventListener('click', () => {
                     currentIndex = index;
-                    showImage();
+                    loadImageAndShow();
                     modal.show();
                 });
             });
 
             document.getElementById('prevImage').addEventListener('click', () => {
                 currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-                showImage();
+                loadImageAndShow();
             });
 
             document.getElementById('nextImage').addEventListener('click', () => {
                 currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-                showImage();
+                loadImageAndShow();
             });
 
             document.addEventListener('keydown', (event) => {
                 if (modal._isShown) {
                     if (event.key === 'ArrowLeft') {
                         currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-                        showImage();
+                        loadImageAndShow();
                     } else if (event.key === 'ArrowRight') {
                         currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-                        showImage();
+                        loadImageAndShow();
                     }
                 }
             });
 
-            function showImage() {
+            function loadImageAndShow() {
                 const img = images[currentIndex];
-                if (!img.src) {
-                    img.src = img.dataset.src;
-                }
-                modalImage.src = img.src;
-                modalTitle.textContent = img.alt;
+                const tempImage = new Image();
+                tempImage.src = img.dataset.src;
+                tempImage.onload = () => {
+                    modalImage.src = tempImage.src;
+                    modalTitle.textContent = img.alt;
+                };
             }
         });
     </script>
