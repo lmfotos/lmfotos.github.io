@@ -6,6 +6,16 @@ ul>.navbar {
   --bs-scroll-height: 100px;
 }
 
+#imageModal .modal-body {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+#modalImage {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .grid {
   column-count: 3;
   column-gap: 5px;
