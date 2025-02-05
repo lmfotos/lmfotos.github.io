@@ -389,19 +389,25 @@
             var msnry = new Masonry(grid, {
                 itemSelector: '.grid-item',
                 columnWidth: '.grid-item',
-                percentPosition: true,
+                //percentPosition: true,
                 stagger: 30,
             });
+            console.log(msnry);
 
             grid.addEventListener('click', function (event) {
+                console.log(event.target);
                 // don't proceed if item was not clicked on
                 if (!matchesSelector(event.target, '.grid-item')) {
+                    console.log('not grid-item');
                     return;
                 }
                 // change size of item via class
                 event.target.classList.toggle('grid-item--gigante');
+                console.log('grid-item--gigante');
+
                 // trigger layout
                 msnry.layout();
+                console.log('msnry.layout()');
             });
         </script>
 
