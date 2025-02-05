@@ -9,17 +9,7 @@ ul>.navbar {
 .grid {
   column-count: 3;
   column-gap: 10px;
-  max-width: 1200px; /* new */
 }
-
-/* new */
-/* clearfix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-/* END new */
 
 .grid-item {
   break-inside: avoid;
@@ -29,19 +19,11 @@ ul>.navbar {
   border-radius: 5px;
 }
 
-/* new */
 .grid-item:hover {
   background: rgb(150, 150, 150);
   border-color: white;
   cursor: pointer;
 }
-
-.grid-item--gigante {
-  width: 200%;
-  height: 200%;
-  z-index: 2; /* above other items */
-}
-/* END new */
 
 .figure-caption {
   color: black;
