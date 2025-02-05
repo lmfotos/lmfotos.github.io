@@ -1,5 +1,5 @@
 textarea {
-    height: 200px;
+  height: 200px;
 }
 
 ul>.navbar {
@@ -11,12 +11,28 @@ ul>.navbar {
   column-gap: 10px;
 }
 
+.grid-sizer,
 .grid-item {
   break-inside: avoid;
   margin-bottom: 10px;
   background: #ddd;
   padding: 10px;
   border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    column-count: 1;
+    column-gap: 5px;
+  }
+
+  .grid-sizer,
+  .grid-item {
+    break-inside: avoid;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 2px;
+  }
 }
 
 .grid-item:hover {
@@ -28,3 +44,4 @@ ul>.navbar {
 .figure-caption {
   color: black;
 }
+
