@@ -73,6 +73,12 @@
 
         gtag('config', 'G-324742VEK4');
     </script>
+    <style>
+        #modalImage {
+            max-width: 100%;
+            max-height: 100vh;
+        }
+    </style>
 </head>
 
 <body>
@@ -417,7 +423,7 @@
             const modalTitle = document.getElementById('imageModalLabel');
             let currentIndex = 0;
 
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const img = entry.target;
@@ -461,12 +467,8 @@
 
             function loadImageAndShow() {
                 const img = images[currentIndex];
-                const tempImage = new Image();
-                tempImage.src = img.dataset.src;
-                tempImage.onload = () => {
-                    modalImage.src = tempImage.src;
-                    modalTitle.textContent = img.alt;
-                };
+                modalImage.src = img.dataset.src;
+                modalTitle.textContent = img.alt;
             }
         });
     </script>
