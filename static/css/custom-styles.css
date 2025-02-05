@@ -2,6 +2,10 @@ textarea {
     height: 200px;
 }
 
+ul>.navbar {
+  --bs-scroll-height: 100px;
+}
+
 .grid {
   column-count: 3;
   column-gap: 10px;

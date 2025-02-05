@@ -125,7 +125,7 @@
 
     <!-- Navbar -->
     <header data-bs-theme="dark">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <nav id="lmf-navbar" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="#">
                     <img src="/static/media/lmf-photo.ico" alt="Logo" width="40" height="40"
@@ -142,7 +142,7 @@
                         <use xlink:href="#facebook"></use>
                     </svg></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -152,10 +152,10 @@
                                 data-bs-target="#contactModal">Contacto</button>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#Portfolio">Portfólio</a>
+                            <a class="nav-link" href="#portfolio">Portfólio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#About">Sobre Mim</a>
+                            <a class="nav-link" href="#about">Sobre Mim</a>
                         </li>
                         <!-- TODO
                         <li class="nav-item">
@@ -175,7 +175,7 @@
     </header>
 
     <!-- Main Container -->
-    <main>
+    <main data-bs-spy="scroll" data-bs-target="#lmf-navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
         <div class="bg-image">
             <div class="container mt-5">
                 <div class="row g-4 p-5 mb-3 row-cols-1 row-cols-lg-2 bg-dark text-light bg-opacity-75">
@@ -190,14 +190,14 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a class="btn btn-secondary mb-4" aria-label="Camera2" href="#Portfolio" rel="noopener">
+                        <a class="btn btn-secondary mb-4" aria-label="Camera2" href="#portfolio" rel="noopener">
                             <svg class="bi bi-camera2" width="16" height="16" fill="currentColor">
                                 <use xlink:href="#camera2"></use>
                             </svg>
                             Portfólio
                         </a>
                     </div>
-                    <div id="About" class="feature col">
+                    <div id="about" class="feature col">
                         <div
                             class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
                             <img src="/static/media/lmf-logo.png" class="img-fluid" alt="LMF Logo">
@@ -225,7 +225,7 @@
         </figure>
 
         <!-- Portfolio -->
-        <div class="container" id="Portfolio">
+        <div class="container" id="portfolio">
             <h2 class="pb-2 border-bottom">Portfólio</h2>
             <div class="grid">
                 <figure class="figure grid-item">
