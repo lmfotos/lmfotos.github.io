@@ -467,6 +467,9 @@
 
             function showImage() {
                 const img = images[currentIndex];
+                if (!img.src) {
+                    img.src = img.dataset.src;
+                }
                 modalImage.src = img.src;
                 modalTitle.textContent = img.alt;
             }
