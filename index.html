@@ -15,7 +15,7 @@
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "ServiçoProfissional",
+            "@type": "ProfessionalService",
             "name": "Luís Moreira Fotografia",
             "url": "https://lmfotos.github.io/",
             "logo": "https://lmfotos.github.io/static/media/lmf-logo.png",
@@ -145,6 +145,25 @@
                         <button type="submit" class="btn btn-secondary">Enviar Mensagem</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Legenda da Imagem</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid" alt="Imagem ampliada">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="prevImage">Anterior</button>
+                    <button type="button" class="btn btn-secondary" id="nextImage">Próxima</button>
+                </div>
             </div>
         </div>
     </div>
@@ -389,6 +408,10 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const images = document.querySelectorAll("img.lazy");
+            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('imageModalLabel');
+            let currentIndex = 0;
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
@@ -401,7 +424,30 @@
                 });
             });
 
-            images.forEach(img => observer.observe(img));
+            images.forEach((img, index) => {
+                observer.observe(img);
+                img.addEventListener('click', () => {
+                    currentIndex = index;
+                    showImage();
+                    modal.show();
+                });
+            });
+
+            document.getElementById('prevImage').addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                showImage();
+            });
+
+            document.getElementById('nextImage').addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                showImage();
+            });
+
+            function showImage() {
+                const img = images[currentIndex];
+                modalImage.src = img.src;
+                modalTitle.textContent = img.alt;
+            }
         });
     </script>
 
