@@ -27,6 +27,10 @@
         }
     </script>
 
+    <!-- Cookiebot banner -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="af713e4a-8c78-4ee0-886c-7a2bb911bf48"
+        data-blockingmode="auto" type="text/javascript"></script>
+
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Luís Moreira Fotografia | Fotografia Profissional">
     <meta property="og:description"
@@ -82,10 +86,20 @@
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJKR2LXZ" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <!-- Banner de Cookies -->
+    <div id="cookie-banner"
+        class="position-fixed bottom-0 start-50 translate-middle-x bg-dark text-light p-3 rounded shadow-lg w-75">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <p class="mb-2 mb-md-0">
+                Usamos cookies para melhorar sua experiência. Consulte nossa
+                <a href="/politica-de-privacidade" class="text-warning" target="_blank">Política de Privacidade</a>.
+            </p>
+            <div class="d-flex">
+                <button id="accept-cookies" class="btn btn-success me-2">Aceitar</button>
+                <button id="reject-cookies" class="btn btn-danger">Recusar</button>
+            </div>
+        </div>
+    </div>
 
     <!-- SVG icons -->
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -167,12 +181,12 @@
                     <button id="prevImage" class="carousel-control-prev" type="button">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Anterior</span>
-                      </button>
+                    </button>
                     <img id="modalImage" src="" class="img-fluid" alt="Imagem ampliada">
                     <button id="nextImage" class="carousel-control-next" type="button">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Próxima</span>
-                      </button>
+                    </button>
                 </div>
             </div>
         </div>
@@ -392,6 +406,12 @@
                 <span class="text-body-secondary">© 2025 Luís Moreira Fotografia. Todos os direitos
                     reservados.</span>
             </div>
+            <!-- Cookiebot Declaration -->
+            <p>
+                <script id="CookieDeclaration"
+                    src="https://consent.cookiebot.com/af713e4a-8c78-4ee0-886c-7a2bb911bf48/cd.js"
+                    type="text/javascript" async></script>
+            </p>
         </footer>
     </main>
 
@@ -415,13 +435,54 @@
         </script>
 
     <!-- Custom JS -->
+
+    <script data-cookieconsent="ignore">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("consent", "default", {
+            ad_personalization: "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            analytics_storage: "denied",
+            functionality_storage: "denied",
+            personalization_storage: "denied",
+            security_storage: "granted",
+            wait_for_update: 500,
+        });
+        gtag("set", "ads_data_redaction", true);
+        gtag("set", "url_passthrough", false);
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const banner = document.getElementById("cookie-banner");
+            const acceptBtn = document.getElementById("accept-cookies");
+            const rejectBtn = document.getElementById("reject-cookies");
             const images = document.querySelectorAll("img.lazy");
             const modal = new bootstrap.Modal(document.getElementById('imageModal'));
             const modalImage = document.getElementById('modalImage');
             const modalTitle = document.getElementById('imageModalLabel');
             let currentIndex = 0;
+
+            if (localStorage.getItem("cookieConsent")) {
+                banner.style.display = "none";
+            }
+
+            acceptBtn.addEventListener("click", function () {
+                localStorage.setItem("cookieConsent", "accepted");
+                enableGoogleAnalytics();
+                banner.style.display = "none";
+            });
+
+            rejectBtn.addEventListener("click", function () {
+                localStorage.setItem("cookieConsent", "rejected");
+                banner.style.display = "none";
+            });
+
+            function enableGoogleAnalytics() {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ event: "consent_given" });
+                console.log("Google Analytics ativado.");
+            }
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
