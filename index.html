@@ -223,23 +223,18 @@
                             class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
                             <img src="/static/media/lmf-logo.png" class="img-fluid" alt="LMF Logo">
                             <h3 class="fs-2 text-body-emphasis">Sobre Mim</h3>
-                            <script>
-
-                            </script>
-                            <div id="aboutMeText">
-                                <p>Olá! Eu sou o Luís Moreira, fotógrafo profissional.</p>
-                                <p>Sou um apaixonado pela fotografia, residente em Vila do Conde, dedico a minha vida a
-                                    transformar momentos em memórias inesquecíveis.</p>
-                                <p>A minha paixão pela fotografia começou muito cedo e, desde então, tenho explorado
-                                    diversas
-                                    técnicas e estilos, na busca de aprimorar o meu olhar e a minha capacidade de contar
-                                    histórias através das imagens.</p>
-                                <p>Sou fotógrafo, de retrato, produto, paisagens, eventos corporativos, batizados e
-                                    comunhões e
-                                    cada área proporciona-me oportunidades únicas de expressar minha criatividade, num
-                                    estilo
-                                    moderno e artístico.</p>
-                            </div>
+                            <p>Olá! Eu sou o Luís Moreira, fotógrafo profissional.</p>
+                            <p>Sou um apaixonado pela fotografia, residente em Vila do Conde, dedico a minha vida a
+                                transformar momentos em memórias inesquecíveis.</p>
+                            <p>A minha paixão pela fotografia começou muito cedo e, desde então, tenho explorado
+                                diversas
+                                técnicas e estilos, na busca de aprimorar o meu olhar e a minha capacidade de contar
+                                histórias através das imagens.</p>
+                            <p>Sou fotógrafo, de retrato, produto, paisagens, eventos corporativos, batizados e
+                                comunhões e
+                                cada área proporciona-me oportunidades únicas de expressar minha criatividade, num
+                                estilo
+                                moderno e artístico.</p>
                         </div>
                     </div>
                 </div>
@@ -454,16 +449,6 @@
                 modalImage.src = img.dataset.src;
                 modalTitle.textContent = img.alt;
             }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const aboutMeText = document.getElementById("aboutMeText");
-            aboutMeText.style.opacity = 0;
-            aboutMeText.style.transition = "opacity 2s ease-in-out";
-
-            setTimeout(() => {
-                aboutMeText.style.opacity = 1;
-            }, 500); // Delay to start the animation
         });
     </script>
     <script>
