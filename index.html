@@ -224,15 +224,7 @@
                             <img src="/static/media/lmf-logo.png" class="img-fluid" alt="LMF Logo">
                             <h3 class="fs-2 text-body-emphasis">Sobre Mim</h3>
                             <script>
-                                document.addEventListener("DOMContentLoaded", function () {
-                                    const aboutMeText = document.getElementById("aboutMeText");
-                                    aboutMeText.style.opacity = 0;
-                                    aboutMeText.style.transition = "opacity 2s ease-in-out";
 
-                                    setTimeout(() => {
-                                        aboutMeText.style.opacity = 1;
-                                    }, 500); // Delay to start the animation
-                                });
                             </script>
                             <div id="aboutMeText">
                                 <p>Olá! Eu sou o Luís Moreira, fotógrafo profissional.</p>
@@ -462,6 +454,16 @@
                 modalImage.src = img.dataset.src;
                 modalTitle.textContent = img.alt;
             }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const aboutMeText = document.getElementById("aboutMeText");
+            aboutMeText.style.opacity = 0;
+            aboutMeText.style.transition = "opacity 2s ease-in-out";
+
+            setTimeout(() => {
+                aboutMeText.style.opacity = 1;
+            }, 500); // Delay to start the animation
         });
     </script>
     <script>
