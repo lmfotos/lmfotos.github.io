@@ -387,6 +387,10 @@
                 percentPosition: true,
                 gutter: 10
             });
+
+            grid.imagesLoaded().progress(function () {
+                msnry.layout();
+            });
         </script>
 
     <!-- Custom JS -->
