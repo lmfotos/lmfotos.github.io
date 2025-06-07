@@ -1,17 +1,21 @@
+/* Bootstrap Icon base style */
 .bi {
     vertical-align: -.125em;
     fill: currentColor;
 }
 
+/* Static white icons */
 .bi-static {
     vertical-align: -.125em;
-    fill: white;
+    fill: white !important;
 }
 
+/* Mode toggle button z-index for dropdown */
 .bd-mode-toggle {
     z-index: 1500;
 }
 
+/* Show active icon in dropdown */
 .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
 }

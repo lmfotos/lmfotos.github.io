@@ -16,31 +16,47 @@ ul>.navbar {
   max-height: 100%;
 }
 
+/* Masonry grid: remove column-count and column-gap */
 .grid {
-  column-count: 3;
-  column-gap: 5px;
+  /* column-count: 3; */
+  /* column-gap: 5px; */
+  display: block;
+  margin-left: -5px; /* gutter size offset */
+  width: auto;
 }
 
 .grid-sizer,
 .grid-item {
-  break-inside: avoid;
+  /* break-inside: avoid; */
   margin-bottom: 5px;
-  background: #ddd;
-  padding: 5px;
+  /* background: #ddd; */
+  /* padding: 5px; */
   border-radius: 2px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.grid-item {
+  width: 33.333%; /* 3 columns by default */
+  padding: 5px;
 }
 
 @media screen and (min-width: 768px) {
   .grid {
-    column-count: 5;
-    column-gap: 10px;
+    /* column-count: 5; */
+    /* column-gap: 10px; */
+    margin-left: -10px;
   }
 
   .grid-sizer,
   .grid-item {
     margin-bottom: 10px;
-    padding: 10px;
     border-radius: 5px;
+  }
+
+  .grid-item {
+    width: 20%; /* 5 columns on desktop */
+    padding: 10px;
   }
 }
 
@@ -52,4 +68,11 @@ ul>.navbar {
 
 .figure-caption {
   color: black;
+}
+
+/* Clear floats after Masonry grid */
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
 }
